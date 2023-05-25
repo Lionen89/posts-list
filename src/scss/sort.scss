@@ -1,0 +1,72 @@
+.sort {
+  position: relative;
+  &__arrow {
+    display: block;
+    background-image: url('../images/arrow.svg');
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    transform: rotate(0);
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      margin: 0 8px;
+      &-colored {
+        color: orange;
+        border-bottom: 1px dashed orange;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    left: 140px;
+    margin-top: 15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 160px;
+
+    &-list {
+      list-style: none;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      &-item {
+        padding: 12px 20px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: rgba(254, 95, 30, 0.05);
+        }
+
+        &.active {
+          font-weight: bold;
+          color: orange;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .sort {
+    &__label {
+      &-text {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+}
